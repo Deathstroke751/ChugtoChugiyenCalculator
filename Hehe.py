@@ -80,7 +80,8 @@ def selector():
         print('')    
         print(heyyow)
     clear()
-    print(''' \033[91m    
+    print(''' \033[91m
+
     ░█████╗░███╗░░██╗████████╗██╗░░██╗░█████╗░██████╗░░█████╗░  ██╗░░░░░░█████╗░░█████╗░██╗░░██╗
     ██╔══██╗████╗░██║╚══██╔══╝██║░░██║██╔══██╗██╔══██╗██╔══██╗  ██║░░░░░██╔══██╗██╔══██╗██║░██╔╝
     ███████║██╔██╗██║░░░██║░░░███████║███████║██║░░██║███████║  ██║░░░░░██║░░██║██║░░██║█████═╝░
@@ -110,30 +111,39 @@ def selector():
     id = choice.get(opsen,'invalid')        
 
     if id == 'pc':
-        clear()
-        initial = input("Enter initial amount - ")        
-        final = input("Enter final amount - ")
-        print(percentage(final,initial)," is the percentage change.")
+        try:
+            clear()
+            initial = input("Enter initial amount - ")        
+            final = input("Enter final amount - ")
+            print(percentage(final,initial)," is the percentage change.")
+        except:
+            print("\n\033[91mERROR\033[00m: Nokki taip seyyedow.",end='')
 
     elif id == 'ia':
-        clear()
-        final = input("Enter final amount - ")        
-        percent = input("Enter percent change - ")
-        print(initial(final,percent)," is the initial amount.")
-
+        try:
+            clear()
+            final = input("Enter final amount - ")        
+            percent = input("Enter percent change - ")
+            print(initial(final,percent)," is the initial amount.")
+        except:
+            print("\n\033[91mERROR\033[00m: Nokki taip seyyedow.",end='')
     elif id == 'fa':
-        clear()
-        initial = input("Enter initial amount - ")        
-        percent = input("Enter percent change - ")
-        print(final(initial,percent)," is the final amount.")    
-
+        try:
+            clear()
+            initial = input("Enter initial amount - ")        
+            percent = input("Enter percent change - ")
+            print(final(initial,percent)," is the final amount.")    
+        except:
+            print("\n\033[91mERROR\033[00m: Nokki taip seyyedow.",end='')
     elif id == 'cc':
-        clear()
-        init = input("Enter initial amount - ")
-        percent = input("Enter percent change - ")        
-        final = input("Enter number of days - ")
-        compound(init,percent,final)    
-
+        try:
+            clear()
+            init = input("Enter initial amount - ")
+            percent = input("Enter percent change - ")        
+            final = input("Enter number of days - ")
+            compound(init,percent,final)    
+        except:
+            print("\n\033[91mERROR\033[00m: Nokki taip seyyedow.",end='')
     elif id == 'bei':
         exit()
 
